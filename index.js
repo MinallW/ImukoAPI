@@ -4,8 +4,8 @@ const express = require('express'),
       port = 3000,
       app = express()
 
-const epsRoutes = require('./epsRoutes'),
-      personasRoutes = require('./personasRoutes')
+const epsRoutes = require('./routes/epsRoutes'),
+      personasRoutes = require('./routes/personasRoutes')
 
 mongoose.connect('mongodb+srv://mongodb:mongodb@cluster0.slthj.mongodb.net/rutas_medicas?retryWrites=true&w=majority',
 		 {useNewUrlParser: true, useUnifiedTopology: true})
