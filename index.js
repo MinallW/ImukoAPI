@@ -2,7 +2,8 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
       port = 3000,
-      app = express()
+      app = express(),
+      cors = require('cors')
 
 const epsRoutes = require('./routes/epsRoutes'),
       personasRoutes = require('./routes/personasRoutes')
@@ -10,6 +11,7 @@ const epsRoutes = require('./routes/epsRoutes'),
 mongoose.connect('mongodb+srv://mongodb:mongodb@cluster0.slthj.mongodb.net/rutas_medicas?retryWrites=true&w=majority',
 		 {useNewUrlParser: true, useUnifiedTopology: true})
 
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
